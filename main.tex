@@ -1,0 +1,126 @@
+\documentclass[PhD]{iitrdiss}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref} 
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage[numbers]{natbib}
+
+\addto\captionsenglish{\renewcommand{\bibname}{References}}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Fortran,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2
+}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{comment}
+
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{\linespread{1.5}\selectfont}
+\AtBeginEnvironment{itemize}{\linespread{1.5}\selectfont}
+
+\usepackage{enumitem}
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{15}\selectfont}
+\subsectionfont{\fontsize{12}{15}\selectfont}
+\usepackage{titlesec}
+
+
+\titleformat{\chapter}[display]
+  {\bfseries\centering} % formatting
+  {} % chapter number followed by a dot
+  {-35pt} % spacing
+  {\Large} % text (title after number)
+%\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+
+\usepackage{caption}
+\captionsetup[table]{font={stretch=1.2}}     
+\captionsetup[figure]{font={stretch=1.2}}
+
+
+\usepackage{fancyhdr}
+\linespread{2}
+ 
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\fancyhf{}
+
+\rhead{\fancyplain{}{\thepage}} % predefined ()
+\lhead{\fancyplain{}{\rightmark}} % 1. sectionname, 1.1 subsection name etc
+%\cfoot{\textcopyright \text{ } \the\year, \emph{Indian Institute of Technology Roorkee}}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{subfiles}
+
+
+%==== Added by shwetank =======
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize}  
+% ======================
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page Update Required
+
+\title{Provide Your Research Title Here which is Suitable for Your Work}  % <<<<==== Update Title =========
+\author{Your Name}                       % <<<<========= Update your name ==========================
+\advisor{Prof. Supervisor 1, IIT Roorkee\\     % <<<<========= Update supervisor 1 name ==================
+        Prof. Supervisor 2, IIT Roorkee\\       % <<<<========= Update supervisor 2 name or remove ========
+        Prof. Supervisor 3, UiT Norway}         % <<<<========= Update supervisor 3 name or remove ========
+\entrynumber{ENROLLMENT NUMBER}                 % <<<<========= Update your enrollment ====================
+\department{ELECTRICAL ENGINEERING}             % <<<<========= Update your Department ====================
+\monthYear{November, 2025}                      % <<<<========= Update Month and Year =====================
+
+
+%\nocite{*}
+\maketitle
+
+\pagenumbering{arabic}
+\setcounter{page}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagenumbering{arabic}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+\chapter{Synopsis}
+\input{nonindex/synopsis}
+
+
+\chapter{Publications}
+\input{nonindex/papers}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
